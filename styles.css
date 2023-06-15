@@ -56,3 +56,7 @@ h1 {
     font-size: large;
     width: 100%;
 }
+
+#arLink > button:active {
+    background-color: #79dada; 
+}

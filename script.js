@@ -35,8 +35,9 @@ function handleButtonClick (event) {
       arButton.id = "arButton";
       arButton.textContent = "Launch AR!";
       arButton.style.marginTop = "5px";
-      arButton.addEventListener("touchstart", handleArButtonCLick);
-      arButton.addEventListener('click', handleArButtonCLick);
+      arButton.addEventListener('click', () => {
+        window.location.href = "marker.html";
+      });
       arDiv.appendChild(arButton);
     }
   
@@ -47,12 +48,6 @@ function handleButtonClick (event) {
     destination = newDestination;
     storeDestination(newDestination);
   };
-
-
-function handleArButtonCLick() {
-    window.location.href = "marker.html";
-    arButton.style.backgroundColor = "#79dada";
-}
 
 const arEntity = document.getElementById('arEntity');
 
