@@ -25,26 +25,33 @@ function resetButtons(){
 }
 
 if(locationsDiv){
-    locationsDiv.addEventListener('click', (event) => {
-        if(!document.getElementById("arButton")){
-            const arButton = document.createElement('button');
-            arButton.id = "arButton";
-            arButton.textContent = "Launch AR!";
-            arButton.style.marginTop = '5px';
-            arButton.addEventListener('click', () => {
-                window.location.href = "marker.html";
-                arButton.style.backgroundColor = '#79dada';
-            });
-            arDiv.appendChild(arButton);
-        }
+    locationsDiv.addEventListener('touchstart', handleButtonClick);
+    locationsDiv.addEventListener('click', handleButtonClick);
+}
 
-        resetButtons();
-        const button = event.target;
-        button.style.backgroundColor = '#79dada';
-        let newDestination = button.id;
-        destination = newDestination;
-        storeDestination(newDestination);
-    });
+function handleButtonClick (event) {
+    if (!document.getElementById("arButton")) {
+      const arButton = document.createElement("button");
+      arButton.id = "arButton";
+      arButton.textContent = "Launch AR!";
+      arButton.style.marginTop = "5px";
+      arButton.addEventListener("touchstart", handleArButtonCLick);
+      arButton.addEventListener('click', handleArButtonCLick);
+      arDiv.appendChild(arButton);
+    }
+  
+    resetButtons();
+    const button = event.target;
+    button.style.backgroundColor = "#79dada";
+    let newDestination = button.id;
+    destination = newDestination;
+    storeDestination(newDestination);
+  };
+
+
+function handleArButtonCLick() {
+    window.location.href = "marker.html";
+    arButton.style.backgroundColor = "#79dada";
 }
 
 const arEntity = document.getElementById('arEntity');
