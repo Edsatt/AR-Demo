@@ -38,8 +38,14 @@ if(locationsDiv){
 const arEntity = document.getElementById('arEntity');
 
 function getModel() {
-    if(destination = 'toilet') return 'data/direction_arrow_right/scene.gltf';
-    if(destination = 'kitchen') return 'data/direction_arrow_left/scene.gltf';
+    if(destination = 'toilet') {
+        alert("Arrow to right");
+        return 'data/direction_arrow_right/scene.gltf';
+    }
+    if(destination = 'kitchen') {
+        alert("Arrow to left");
+        return 'data/direction_arrow_left/scene.gltf';
+    }
 }
 
 if(arEntity){
