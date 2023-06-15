@@ -17,6 +17,13 @@ function getDestination() {
     return "";
 };
 
+function resetButtons(){
+    const children = locationsDiv.children;
+    for(const child of children) {
+        child.style.backgroundColor = 'darkCyan';
+    }
+}
+
 if(locationsDiv){
     locationsDiv.addEventListener('click', (event) => {
         if(!document.getElementById("arButton")){
@@ -26,10 +33,15 @@ if(locationsDiv){
             arButton.style.marginTop = '5px';
             arButton.addEventListener('click', () => {
                 window.location.href = "marker.html";
+                arButton.style.backgroundColor = '#79dada';
             });
             arDiv.appendChild(arButton);
         }
-        let newDestination = event.target.id;
+
+        resetButtons();
+        const button = event.target;
+        button.style.backgroundColor = '#79dada';
+        let newDestination = button.id;
         destination = newDestination;
         storeDestination(newDestination);
     });
