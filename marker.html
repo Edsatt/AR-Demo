@@ -11,11 +11,13 @@
                 scale="0.5 0.5 0.5"
                 ></a-entity>
             </a-marker> -->
-            <a-marker
-                id="arEntity"
-                type="pattern"
-                patternUrl="data/marker.patt"
-            ></a-marker>
+            <a-marker type="pattern" patternUrl="data/marker.patt">
+                <a-entity
+                    id="arEntity"
+                    position="0 0 0"
+                    scale="0.5 0.5 0.5"
+                ></a-entity>
+            </a-marker>
             <a-entity camera></a-entity>
         </a-scene>
         <script src="script.js"></script>
